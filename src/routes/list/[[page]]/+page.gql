@@ -1,0 +1,22 @@
+query AnimeList($page: Int) {
+  Page(page: $page, perPage: 10) {
+    pageInfo {
+      currentPage
+    }
+    
+    media {
+      id
+      title {
+        romaji
+        english
+        native
+        userPreferred
+      }
+      
+      coverImage {
+        color
+        extraLarge
+      }
+    }
+  } 
+}
