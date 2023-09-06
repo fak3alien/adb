@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { clsx } from 'clsx';
 	import Card from './components/card.svelte';
+	import { styles } from '$lib/styles';
 	export let data: PageData;
 
 	$: ({ AnimeList } = data);
@@ -10,7 +11,12 @@
 	$: prevPage = currentPage - 1 > 0 ? currentPage - 1 : 0;
 </script>
 
-<div class="grid grid-cols-[repeat(auto-fit,minmax(0,300px))] w-full justify-center gap-4">
+<div
+	class={clsx(
+		'grid grid-cols-[repeat(auto-fit,minmax(0,300px))] w-full justify-center gap-4 py-20',
+		styles.paddingHorizontal
+	)}
+>
 	{#if $AnimeList.data?.Page?.media}
 		{#each $AnimeList.data?.Page?.media as anime}
 			<Card

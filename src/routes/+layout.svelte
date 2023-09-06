@@ -3,11 +3,11 @@
 </script>
 
 <div class="grid grid-rows-auto/1fr/auto min-h-screen">
-	<header class="bg-blue-300 p-4 text-3xl">
+	<header class="bg-blue-300 p-4 text-3xl sticky top-0 z-50">
 		<a href="/">AniList</a>
 	</header>
 
-	<main class="py-20 px-4 md:px-12 2xl:px-[calc((100vw-1440px)/2)]">
+	<main>
 		<slot />
 	</main>
 
